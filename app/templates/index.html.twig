@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'virtual_work_monitor'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <div id="art">
+        <article id="artindex">
+            <h2>Wirtualny Monitor Pracy</h2>
+            <h3>Czym jest WMP?</h3>
+            <p>
+                „Wirtualny Monitor Pracy” jest to aplikacja służąca do zapisywania umów. <br>
+                Równie przydatną funkcją jest możliwość tworzenia oraz zapisywania notatek.
+            </p>
+            <br>
+            <h3>Kiedy powinieneś skorzystać z WMP?</h3>
+            <p>
+                Po każdej pozytywnie zakończonej rozmowie, należy odpowiednio zapisać umowę w systemie.
+            </p>
+            <br>
+            <h3>Jak utworzyć konto?</h3>
+            <p>
+                Aby utworzyć konto, należy wypełnić <a href="{{ url('registration_register') }}">formularz rejestracji</a> swoimi danymi. <br>
+                <b>E-mail</b> oraz utworzone <b>hasło</b> należy zapamiętać, ponieważ będą one konieczne do zalogowania się do serwisu.
+            </p>
+        </article>
+    </div>
+{% endblock %}

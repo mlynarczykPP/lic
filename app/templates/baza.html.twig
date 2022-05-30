@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'virtual_work_monitor'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <div id="png">
+        <img src="{{ asset('schemat_bazy.png') }}" alt="baza danych">
+    </div>
+{% endblock %}

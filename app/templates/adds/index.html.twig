@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.adds_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.adds_list'|trans }}</h2>
+    <div class="dodaj"> <a href="{{ url('adds_create') }}">&#10133; {{ 'add'|trans }}</a> </div>
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'adds.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 'adds.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.name'|trans, 'adds.name') }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for adds in pagination.items %}
+                <tr>
+                    <td>{{ adds.id }}</td>
+                    <td>{{ adds.createdAt|date('d.m.Y') }}</td>
+                    <td>{{ adds.name }}</td>
+                    <td>
+                        <a href="{{ url('adds_show', {id: adds.id}) }}" title="{{ 'action.show'|trans }}">
+                            &#128269;{{ 'action.show'|trans }}
+                        </a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ url('adds_edit', {id: adds.id}) }}" title="{{ 'action.edit'|trans }}">
+                                &#128295;{{ 'action.edit'|trans }}
+                            </a>
+                            <a href="{{ url('adds_delete', {id: adds.id}) }}" title="{{ 'action.delete'|trans }}">
+                                &#10060;{{ 'action.delete'|trans }}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {% include 'default/_single_alert_message.html.twig' with {
+                type: 'warning',
+                message: 'message.empty_list'|trans
+            } %}
+        </p>
+    {% endif %}
+{% endblock %}

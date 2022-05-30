@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.adds_details'|trans({'%id%': adds.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.adds_details'|trans({'%id%': adds.id|default('')}) }}</h2>
+    {% if adds is defined and adds|length %}
+        <table class="table table-striped" id="tab">
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <td>{{ adds.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ adds.createdAt|date('d.m.Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.name'|trans }}</th>
+                <td>{{  adds.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.comment'|trans }}</th>
+                <td>{{  adds.comment }}</td>
+            </tr>
+        </table>
+        <p>
+            <a href="{{ url('adds_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                &#11013;{{ 'action.back_to_list'|trans }}
+            </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ url('adds_edit', {id: adds.id}) }}" title="{{ 'action.edit'|trans }}">
+                    &#128295;{{ 'action.edit'|trans }}
+                </a>
+                <a href="{{ url('adds_delete', {id: adds.id}) }}" title="{{ 'action.delete'|trans }}">
+                    &#10060;{{ 'action.delete'|trans }}
+            {% endif %}
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

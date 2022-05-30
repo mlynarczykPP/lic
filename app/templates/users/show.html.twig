@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title_users_details'|trans({'%id%': users.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title_users_details'|trans({'%id%': users.id|default('')}) }}</h2>
+    {% if users is defined and users|length %}
+        <table class="table table-striped" id="tab">
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <td>{{ users.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label_firstname'|trans }}</th>
+                <td>{{ users.firstname }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label_lastname'|trans }}</th>
+                <td>{{ users.lastname }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'email'|trans }}</th>
+                <td>{{ users.email }}</td>
+            </tr>
+        </table>
+        <p>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ url('users_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                    &#11013;{{ 'action.back_to_list'|trans }}
+                </a>
+                <a href="{{ url('users_edit', {id: users.id}) }}" title="{{ 'action.edit'|trans }}">
+                    &#128295;{{ 'action.edit'|trans }}
+                </a>
+            {% else %}
+                <a href="{{ url('sales_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                    &#11013;{{ 'action.back_to_list'|trans }}
+                </a>
+            {% endif %}
+        </p>
+    {% else %}
+        <p>
+            {{ 'message_item_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

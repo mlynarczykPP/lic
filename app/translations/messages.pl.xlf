@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="virtual_work_monitor">
+                <source>virtual_work_monitor</source>
+                <target>Wirtualny Monitor Pracy</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>Operacje</target>
+            </trans-unit>
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Tytuł</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>Nazwa</target>
+            </trans-unit>
+            <trans-unit id="label.number">
+                <source>label.number</source>
+                <target>Numer</target>
+            </trans-unit>
+            <trans-unit id="label.comment">
+                <source>label.comment</source>
+                <target>Komentarz</target>
+            </trans-unit>
+            <trans-unit id="label.created_at">
+                <source>label.created_at</source>
+                <target>Utworzono</target>
+            </trans-unit>
+            <trans-unit id="label.smartphone">
+                <source>label.smartphone</source>
+                <target>Smartphone</target>
+            </trans-unit>
+            <trans-unit id="label.acc">
+                <source>label.acc</source>
+                <target>Akcesoria [zł]</target>
+            </trans-unit>
+            <trans-unit id="label.category">
+                <source>label.category</source>
+                <target>Kategoria</target>
+            </trans-unit>
+            <trans-unit id="label.add">
+                <source>label.add</source>
+                <target>Dodatkowo</target>
+            </trans-unit>
+            <trans-unit id="label_firstname">
+                <source>label_firstname</source>
+                <target>Imię</target>
+            </trans-unit>
+            <trans-unit id="label_lastname">
+                <source>label_lastname</source>
+                <target>Nazwisko</target>
+            </trans-unit>
+            <trans-unit id="label_new_firstname">
+                <source>label_new_firstname</source>
+                <target>Nowe imię</target>
+            </trans-unit>
+            <trans-unit id="label_new_lastname">
+                <source>label_new_lastname</source>
+                <target>Nowe nazwisko</target>
+            </trans-unit>
+            <trans-unit id="label_new_email">
+                <source>label_new_email</source>
+                <target>Nowy email</target>
+            </trans-unit>
+            <trans-unit id="label_new_password">
+                <source>label_new_password</source>
+                <target>Nowe hasło</target>
+            </trans-unit>
+            <trans-unit id="label_new_password_repeat">
+                <source>label_new_password_repeat</source>
+                <target>Powtórz nowe hasło</target>
+            </trans-unit>
+            <trans-unit id="message.empty_list">
+                <source>message.empty_list</source>
+                <target>Lista jest pusta.</target>
+            </trans-unit>
+            <trans-unit id="message.record_not_found">
+                <source>message.record_not_found</source>
+                <target>Brak rekordu.</target>
+            </trans-unit>
+            <trans-unit id="message.deleted_successfully">
+                <source>message.deleted_successfully</source>
+                <target>Usunięto pomyślnie.</target>
+            </trans-unit>
+            <trans-unit id="message.created_successfully">
+                <source>message.created_successfully</source>
+                <target>Dodano pomyślnie.</target>
+            </trans-unit>
+            <trans-unit id="message_created_successfully">
+                <source>message_created_successfully</source>
+                <target>Dodano pomyślnie.</target>
+            </trans-unit>
+            <trans-unit id="message.edited_successfully">
+                <source>message.edited_successfully</source>
+                <target>Edytowano pomyślnie.</target>
+            </trans-unit>
+            <trans-unit id="message_updated_successfully">
+                <source>message_updated_successfully</source>
+                <target>Zapisano pomyślnie.</target>
+            </trans-unit>
+            <trans-unit id="title.sales_list">
+                <source>title.sales_list</source>
+                <target>Sprzedaże</target>
+            </trans-unit>
+            <trans-unit id="title.adds_list">
+                <source>title.adds_list</source>
+                <target>Dodatki</target>
+            </trans-unit>
+            <trans-unit id="title.sales_details">
+                <source>title.sales_details</source>
+                <target>Sprzedaż #%id% szczegóły</target>
+            </trans-unit>
+            <trans-unit id="title.adds_details">
+                <source>title.adds_details</source>
+                <target>Dodatek #%id% szczegóły</target>
+            </trans-unit>
+            <trans-unit id="title.notes_details">
+                <source>title.notes_details</source>
+                <target>Notatka #%id% szczegóły</target>
+            </trans-unit>
+            <trans-unit id="title_mon">
+                <source>title_mon</source>
+                <target>Wirtualny Monitor Pracy</target>
+            </trans-unit>
+            <trans-unit id="title.sales_ranking">
+                <source>title.sales_ranking</source>
+                <target>Najlepsi w kategorii Sprzedaż</target>
+            </trans-unit>
+            <trans-unit id="title.smart_ranking">
+                <source>title.smart_ranking</source>
+                <target>Najlepsi w kategorii Smartfon</target>
+            </trans-unit>
+            <trans-unit id="title.acc_ranking">
+                <source>title.acc_ranking</source>
+                <target>Najlepsi w kategorii Akcesoria</target>
+            </trans-unit>
+            <trans-unit id="title.rank_list">
+                <source>title.rank_list</source>
+                <target>Ranking</target>
+            </trans-unit>
+            <trans-unit id="title.rank_sales">
+                <source>title.rank_sales</source>
+                <target>Sprzedaże</target>
+            </trans-unit>
+            <trans-unit id="title.rank_smartphone">
+                <source>title.rank_smartphone</source>
+                <target>Telefony</target>
+            </trans-unit>
+            <trans-unit id="title.rank_acc">
+                <source>title.rank_acc</source>
+                <target>Akcesoria</target>
+            </trans-unit>
+            <trans-unit id="title.notes_list">
+                <source>title.notes_list</source>
+                <target>Notatki</target>
+            </trans-unit>
+            <trans-unit id="title_users_list">
+                <source>title_users_list</source>
+                <target>Użytkownicy</target>
+            </trans-unit>
+            <trans-unit id="title_users_details">
+                <source>title_users_details</source>
+                <target>Dane użytkownika</target>
+            </trans-unit>
+            <trans-unit id="title.users_edit">
+                <source>title.users_edit</source>
+                <target>Edytuj dane</target>
+            </trans-unit>
+            <trans-unit id="title.sales_delete">
+                <source>title.sales_delete</source>
+                <target>Usuwanie sprzedaży #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.sales_edit">
+                <source>title.sales_edit</source>
+                <target>Edytowanie sprzedaży #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.sales_create">
+                <source>title.sales_create</source>
+                <target>Tworzenie sprzedaży</target>
+            </trans-unit>
+            <trans-unit id="title.note_delete">
+                <source>title.note_delete</source>
+                <target>Usuwanie notatki #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.note_edit">
+                <source>title.note_edit</source>
+                <target>Edytowanie notatki #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.note_create">
+                <source>title.note_create</source>
+                <target>Tworzenie notatki</target>
+            </trans-unit>
+            <trans-unit id="title.adds_delete">
+                <source>title.adds_delete</source>
+                <target>Usuwanie dodatku #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.adds_edit">
+                <source>title.adds_edit</source>
+                <target>Edytowanie dodatku #%id%</target>
+            </trans-unit>
+            <trans-unit id="title.adds_create">
+                <source>title.adds_create</source>
+                <target>Tworzenie dodatku</target>
+            </trans-unit>
+            <trans-unit id="button_view">
+                <source>button_view</source>
+                <target>Pokaż</target>
+            </trans-unit>
+            <trans-unit id="button_sign_in">
+                <source>button_sign_in</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="button_user_edit">
+                <source>button_user_edit</source>
+                <target>Edytuj dane</target>
+            </trans-unit>
+            <trans-unit id="button_log_out">
+                <source>button_log_out</source>
+                <target>Wyloguj</target>
+            </trans-unit>
+            <trans-unit id="add">
+                <source>add</source>
+                <target>Dodaj</target>
+            </trans-unit>
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>Szczegóły</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Zapisz</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="action.back_to_list">
+                <source>action.back_to_list</source>
+                <target>Powrót</target>
+            </trans-unit>
+            <trans-unit id="sign_up">
+                <source>sign_up</source>
+                <target>Zaloguj</target>
+            </trans-unit>
+            <trans-unit id="register">
+                <source>register</source>
+                <target>Zarejestruj</target>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>email</source>
+                <target>Email</target>
+            </trans-unit>
+            <trans-unit id="password">
+                <source>password</source>
+                <target>Hasło</target>
+            </trans-unit>
+            <trans-unit id="password_repeat">
+                <source>password_repeat</source>
+                <target>Powtórz hasło</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

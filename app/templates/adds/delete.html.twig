@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.adds_delete'|trans({'%id%': adds.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.adds_delete'|trans({'%id%': adds.id|default('')}) }}</h2>
+    {% if add is defined and add|length %}
+        <table class="table table-striped" id="tab">
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <td>{{ add.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ add.createdAt|date('d.m.Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.name'|trans }}</th>
+                <td>{{  add.name }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.comment'|trans }}</th>
+                <td>{{  add.comment }}</td>
+            </tr>
+        </table>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+    {% include 'default/_form.html.twig' with {
+        page_title: 'title.adds_delete'|trans({'%id%': add.id|default('')}),
+        form: form,
+        submit_label: 'action.delete'|trans,
+        back_to_list_path: 'adds_index',
+    } %}
+{% endblock %}

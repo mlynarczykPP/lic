@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.sales_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.sales_list'|trans }}</h2>
+    {% if is_granted('ROLE_ADMIN') %}
+
+    {% else %}
+        <div class="dodaj"> <a href="{{ url('sales_create') }}">&#10133; {{ 'add'|trans }}</a> </div>
+    {% endif %}
+    {% if pagination is defined and pagination.items|length %}
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'label.id'|trans, 'sales.id') }}</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>{{ knp_pagination_sortable(pagination, 'label.author'|trans, 'user.lastname') }}</th>
+                {% endif %}
+                <th>{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 'sales.createdAt') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.category'|trans, 'category.name') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'sales.title') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.smartphone'|trans, 'sales.smartphone') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'label.acc'|trans, 'sales.acc') }}</th>
+                <th>{{ 'label.add'|trans }}</th>
+                <th>{{ 'label.actions'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sales in pagination.items %}
+                <tr>
+                    <td>{{ sales.id }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td>{{ sales.author.firstname }}&nbsp;{{ sales.author.lastname }}</td>
+                    {% endif %}
+                    <td>{{ sales.createdAt|date('d.m.Y') }}</td>
+                    <td>{{ sales.category.name }}</td>
+                    <td>{{ sales.title }}</td>
+                    <td>{{ sales.smartphone }}</td>
+                    <td>{{ sales.acc}}</td>
+                    <td>
+                        {% if sales.adds is defined and sales.adds|length %}
+                            {% for adds in sales.adds %}
+                                <a href="{{ url('sales_index', {'filters.adds_id' : adds.id}) }}" title="{{ adds.name }}">
+                                    {{ adds.name }}
+                                </a>
+                            {% endfor %}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ url('sales_show', {id: sales.id}) }}" title="{{ 'action.show'|trans }}">
+                            &#128269;{{ 'action.show'|trans }}
+                        </a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ url('sales_edit', {id: sales.id}) }}" title="{{ 'action.edit'|trans }}">
+                                &#128295;{{ 'action.edit'|trans }}
+                            </a>
+                            <a href="{{ url('sales_delete', {id: sales.id}) }}" title="{{ 'action.delete'|trans }}">
+                                &#10060;{{ 'action.delete'|trans }}
+                            </a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>
+            {% include 'default/_single_alert_message.html.twig' with {
+                type: 'warning',
+                message: 'message.empty_list'|trans
+            } %}
+        </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.note_delete'|trans({'%id%': note.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.note_delete'|trans({'%id%': note.id|default('')}) }}</h2>
+    {% if note is defined and note|length %}
+        <table class="table table-striped" id="tab">
+            <tr>
+                <th>{{ 'label.id'|trans }}</th>
+                <td>{{ note.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.created_at'|trans }}</th>
+                <td>{{ note.createdAt|date('d.m.Y') }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.title'|trans }}</th>
+                <td>{{  note.title }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.number'|trans }}</th>
+                <td>{{  note.number }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'label.comment'|trans }}</th>
+                <td>{{  note.comment }}</td>
+            </tr>
+        </table>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+    {% include 'default/_form.html.twig' with {
+        page_title: 'title.note_delete'|trans({'%id%': note.id|default('')}),
+        form: form,
+        submit_label: 'action.delete'|trans,
+        back_to_list_path: 'note_index',
+    } %}
+{% endblock %}

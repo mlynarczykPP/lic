@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.sales_edit'|trans({'%id%': sales.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    {{ include('menu.html.twig') }}
+    <h2>{{ 'title.sales_edit'|trans({'%id%': sales.id|default('')}) }}</h2>
+    {% include 'default/_form.html.twig' with {
+        page_title: 'title.sales_edit'|trans({'%id%': sales.id|default('')}),
+        form: form,
+        submit_label: 'action.edit'|trans,
+        back_to_list_path: 'sales_index',
+    } %}
+{% endblock %}
